@@ -477,6 +477,7 @@ type Config struct {
 	KeyFile      string          `yaml:"keyFile"`
 	BootstrapDNS BootstrapConfig `yaml:"bootstrapDns"`
 	HostsFile    HostsFileConfig `yaml:"hostsFile"`
+	Docker       DockerConfig    `yaml:"docker"`
 	FqdnOnly     bool            `yaml:"fqdnOnly" default:"false"`
 	Filtering    FilteringConfig `yaml:"filtering"`
 	Ede          EdeConfig       `yaml:"ede"`
@@ -589,6 +590,13 @@ type HostsFileConfig struct {
 	HostsTTL       Duration `yaml:"hostsTTL" default:"1h"`
 	RefreshPeriod  Duration `yaml:"refreshPeriod" default:"1h"`
 	FilterLoopback bool     `yaml:"filterLoopback"`
+}
+
+// DockerConfig configuration for docker container resolver
+type DockerConfig struct {
+	SocketPath    string   `yaml:"socketPath"`
+	HostsTTL      Duration `yaml:"hostsTTL" default:"1h"`
+	RefreshPeriod Duration `yaml:"refreshPeriod" default:"1h"`
 }
 
 type FilteringConfig struct {

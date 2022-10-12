@@ -417,6 +417,7 @@ func createQueryResolver(
 		resolver.NewMetricsResolver(cfg.Prometheus),
 		resolver.NewRewriterResolver(cfg.CustomDNS.RewriteConfig, resolver.NewCustomDNSResolver(cfg.CustomDNS)),
 		resolver.NewHostsFileResolver(cfg.HostsFile),
+		resolver.NewDockerResolver(cfg.Docker),
 		blockingResolver,
 		resolver.NewCachingResolver(cfg.Caching, redisClient),
 		resolver.NewRewriterResolver(cfg.Conditional.RewriteConfig, conditionalUpstreamResolver),

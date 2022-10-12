@@ -19,6 +19,7 @@ import (
 // FILTERED // the query was filtered by query type
 // NOTFQDN // the query was filtered as it is not fqdn conform
 // SPECIAL // the query was resolved by the special use domain name resolver
+// DOCKER // the query was resolved by looking up running docker containers
 // )
 type ResponseType int
 

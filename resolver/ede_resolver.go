@@ -68,6 +68,8 @@ func convertToExtendedErrorCode(input model.ResponseType) uint16 {
 		return dns.ExtendedErrorCodeForgedAnswer
 	case model.ResponseTypeHOSTSFILE:
 		return dns.ExtendedErrorCodeForgedAnswer
+	case model.ResponseTypeDOCKER:
+		return dns.ExtendedErrorCodeForgedAnswer
 	case model.ResponseTypeNOTFQDN:
 		return dns.ExtendedErrorCodeBlocked
 	case model.ResponseTypeBLOCKED:

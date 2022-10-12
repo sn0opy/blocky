@@ -104,9 +104,12 @@ const (
 	// ResponseTypeSPECIAL is a ResponseType of type SPECIAL.
 	// the query was resolved by the special use domain name resolver
 	ResponseTypeSPECIAL
+	// ResponseTypeDOCKER is a ResponseType of type DOCKER.
+	// the query was resolved by looking up running docker containers
+	ResponseTypeDOCKER
 )
 
-const _ResponseTypeName = "RESOLVEDCACHEDBLOCKEDCONDITIONALCUSTOMDNSHOSTSFILEFILTEREDNOTFQDNSPECIAL"
+const _ResponseTypeName = "RESOLVEDCACHEDBLOCKEDCONDITIONALCUSTOMDNSHOSTSFILEFILTEREDNOTFQDNSPECIALDOCKER"
 
 var _ResponseTypeNames = []string{
 	_ResponseTypeName[0:8],
@@ -118,6 +121,7 @@ var _ResponseTypeNames = []string{
 	_ResponseTypeName[50:58],
 	_ResponseTypeName[58:65],
 	_ResponseTypeName[65:72],
+	_ResponseTypeName[72:78],
 }
 
 // ResponseTypeNames returns a list of possible string values of ResponseType.
@@ -137,6 +141,7 @@ var _ResponseTypeMap = map[ResponseType]string{
 	ResponseTypeFILTERED:    _ResponseTypeName[50:58],
 	ResponseTypeNOTFQDN:     _ResponseTypeName[58:65],
 	ResponseTypeSPECIAL:     _ResponseTypeName[65:72],
+	ResponseTypeDOCKER:      _ResponseTypeName[72:78],
 }
 
 // String implements the Stringer interface.
@@ -157,6 +162,7 @@ var _ResponseTypeValue = map[string]ResponseType{
 	_ResponseTypeName[50:58]: ResponseTypeFILTERED,
 	_ResponseTypeName[58:65]: ResponseTypeNOTFQDN,
 	_ResponseTypeName[65:72]: ResponseTypeSPECIAL,
+	_ResponseTypeName[72:78]: ResponseTypeDOCKER,
 }
 
 // ParseResponseType attempts to convert a string to a ResponseType.
